@@ -1,0 +1,135 @@
+{
+  "query": "微量吸管",
+  "summaries": [
+    {
+      "position": 1,
+      "domain": "https://www.uccl.com.tw › 部落格 › 產品訊息",
+      "key_points": [
+        "微量吸管是精密實驗工具",
+        "用於精準吸取和分配液體",
+        "以微升為單位操作",
+        "具有高度準確性和重複性",
+        "操作便利"
+      ],
+      "content_depth": "medium",
+      "unique_value": "無特殊亮點"
+    },
+    {
+      "position": 2,
+      "domain": "https://www.sciket.com › 實驗儀器/設備",
+      "key_points": [
+        "精確移動和傳送微量液體",
+        "小型管狀器具",
+        "一端開口可連接移液器",
+        "吸取或釋放液體",
+        "類型可分為電動"
+      ],
+      "content_depth": "medium",
+      "unique_value": "無特殊亮點"
+    },
+    {
+      "position": 3,
+      "domain": "https://dgs.com.tw › ... › 微量吸管 可調式 可全滅菌",
+      "key_points": [
+        "容量範圍0.1μl~10000μl",
+        "符合ISO9001, ISO13485, GLP",
+        "嚴格測試符合ISO8655/DIN12650",
+        "人體工學設計",
+        "可全滅菌"
+      ],
+      "content_depth": "medium",
+      "unique_value": "符合多項國際標準"
+    },
+    {
+      "position": 4,
+      "domain": "https://www.hi-point.com.tw › news_detail",
+      "key_points": [
+        "微量吸管是精密工具",
+        "廣泛應用於分子生物",
+        "用於精準移取微小體積",
+        "涉及臨床診斷和生化檢測"
+      ],
+      "content_depth": "medium",
+      "unique_value": "無特殊亮點"
+    },
+    {
+      "position": 5,
+      "domain": "https://www.finetech-filter.com › product-detail-868674",
+      "key_points": [
+        "正位移設計避免交叉污染",
+        "毛細管活塞吸管尖",
+        "適用於有機溶劑、水銀",
+        "防止液體爆衝"
+      ],
+      "content_depth": "medium",
+      "unique_value": "正位移設計和毛細管活塞吸管尖"
+    },
+    {
+      "position": 6,
+      "domain": "https://teaching.ch.ntu.edu.tw › micropipette",
+      "key_points": [
+        "微量吸管需裝上吸管尖",
+        "不可橫放或倒置微量吸管",
+        "適用於物理化學實驗"
+      ],
+      "content_depth": "shallow",
+      "unique_value": "無特殊亮點"
+    },
+    {
+      "position": 7,
+      "domain": "https://www.hongi-ins.com.tw › ... › VITLAB › 微量吸管",
+      "key_points": [
+        "可在121℃下整支滅菌",
+        "符合DIN EN 285標準",
+        "位數容量顯示精確",
+        "大直徑置中設計按鈕",
+        "抗腐蝕材料耐用性高"
+      ],
+      "content_depth": "medium",
+      "unique_value": "無特殊亮點"
+    },
+    {
+      "position": 8,
+      "domain": "https://lmicotw.com › product › pipetmanl-機械型微量...",
+      "key_points": [
+        "人體工學設計",
+        "舒適性",
+        "實驗可追溯性",
+        "體積可調整",
+        "空氣位移式"
+      ],
+      "content_depth": "medium",
+      "unique_value": "人體工學設計與舒適性"
+    }
+  ],
+  "gaps": [],
+  "outline": {
+    "topic": "微量吸管",
+    "blocks": [
+      {
+        "block_name": "quick_summary",
+        "block_title": "微量吸管快速總覽",
+        "word_count_target": "100-150",
+        "subsections": []
+      },
+      {
+        "block_name": "definition",
+        "block_title": "什麼是微量吸管？",
+        "word_count_target": "300-400",
+        "subsections": []
+      },
+      {
+        "block_name": "uses",
+        "block_title": "微量吸管的使用方法",
+        "word_count_target": "500-600",
+        "subsections": []
+      },
+      {
+        "block_name": "faq",
+        "block_title": "微量吸管常見問題",
+        "word_count_target": "600-1000",
+        "subsections": []
+      }
+    ]
+  }
+}

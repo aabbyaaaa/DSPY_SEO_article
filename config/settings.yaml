@@ -1,0 +1,260 @@
+# ================================================
+# LLM-SEO Pipeline Configuration
+# ================================================
+# API Keys 請設定在 config/secrets.env
+# 使用方式: from dotenv import load_dotenv; load_dotenv("config/secrets.env")
+
+# ================================================
+# 基本設定
+# ================================================
+lang: zh-TW
+region: tw
+topic: 高壓滅菌鍋
+
+# ================================================
+# Stage ① & ②: 查詢池與研究
+# ================================================
+query_generation:
+  pool_size: 20                    # 生成查詢數量
+  merge_threshold: 0.90            # 語義合併閾值 (cosine similarity)
+  language: "zh-TW"                # 只生成繁體中文查詢
+  base_seeds:                      # 手動種子查詢（防語義漂移）
+    - "高壓滅菌鍋"
+    - "高壓蒸氣滅菌器"
+    - "滅菌鍋使用方法"
+    - "高壓滅菌鍋 溫度"
+    - "滅菌鍋 維護保養"
+
+research:
+  use_tavily: true
+  use_wikipedia: true
+  tavily_max_results: 5
+  wikipedia_sections: 3
+
+# ================================================
+# Stage ②: SERP 分析
+# ================================================
+serp:
+  enabled: true
+  top_n: 10                        # 每個查詢抓取前 N 個結果
+  search_engines:
+    - google
+    - bing
+
+  # SERP 特徵提取
+  features:
+    extract_paa: true              # People Also Ask
+    extract_related: true          # Related Searches
+    extract_featured_snippet: true
+    extract_schema: true           # Schema.org 結構化數據
+
+  # 內容分析深度
+  content_analysis:
+    fetch_full_text: true          # 抓取完整頁面內容
+    max_words_per_page: 5000       # 每頁最多分析字數
+    extract_headings: true         # H1-H3
+    extract_images: true
+    extract_links: true
+    analyze_eeat: true             # E-E-A-T 信號分析
+
+  # AI 引擎優化 (SEO/AISEO/GEO/AIO)
+  ai_engines:
+    check_aiseo: true              # AI Overview (Google)
+    check_geo: true                # Gemini
+    check_aio: true                # Perplexity, You.com
+    ai_trigger_threshold: 0.6      # AI 觸發率閾值
+
+# ================================================
+# Stage ③: 語義評分
+# ================================================
+scores:
+  # 混合評分權重
+  embedding_weight: 0.6            # Embedding 分數權重
+  llm_weight: 0.4                  # LLM 分數權重
+
+  # 三維評分權重
+  coverage_w: 0.4                  # 覆蓋度
+  relevance_w: 0.4                 # 相關性
+  density_w: 0.2                   # 密度
+
+  # 評分閾值
+  min_score_threshold: 4.5         # 低於此分數的查詢會被過濾
+  top_queries_limit: 15            # 保留前 N 個高分查詢
+
+# ================================================
+# Stage ③: DSPy 分析模組
+# ================================================
+dspy:
+  enabled: true
+
+  # DSPy 模型配置
+  models:
+    small: gpt-4o-mini             # 用於 summarization
+    main: gpt-4o                   # 用於 gap analysis & outline
+
+  # 優化器設定
+  optimizer:
+    type: BootstrapFewShot         # BootstrapFewShot | MIPRO | BayesianOptimizer
+    max_bootstrapped_demos: 8
+    max_labeled_demos: 4
+
+  # 模組配置
+  modules:
+    content_summarizer:
+      max_summary_length: 200
+      extract_keywords: true
+
+    gap_analyzer:
+      min_gap_score: 0.6           # 缺口機會分數閾值
+      max_gaps: 5                  # 最多保留幾個缺口
+
+    outline_generator:
+      structure: "4-block"         # 固定 4 區塊
+      use_serp_insights: true
+
+# ================================================
+# Stage ④: 文章生成
+# ================================================
+article:
+  structure: "4-block"
+
+  # 4 區塊字數要求
+  blocks:
+    quick_summary:
+      word_count_min: 40
+      word_count_max: 50
+      sentences: 2-3               # 2-3 句話
+      must_include: ["定義"]
+
+    definition:
+      word_count_min: 100
+      word_count_max: 150
+      must_include: ["基本定義"]
+
+    uses:
+      word_count_min: 100
+      word_count_max: 150
+      format: "bullet_list"        # 條列式
+      subsections_min: 3
+
+    faq:
+      word_count_min: 3000
+      word_count_max: 3000
+      questions_min: 10
+      questions_max: 10
+      answer_max_words: 300        # 每個回答不超過 300 字
+      require_schema: true         # 必須包含 FAQPage schema
+
+  # 總字數
+  total_word_count_min: 3200
+  total_word_count_max: 3500
+
+  # SEO 要求
+  seo:
+    target_keywords: []            # 自動從 SERP 分析提取
+    keyword_density_min: 0.015
+    keyword_density_max: 0.03
+    h2_count_min: 4
+    h2_count_max: 7
+    image_count_min: 6
+    citations_min: 3
+    internal_links_min: 5
+
+  # Schema.org
+  schema:
+    require_article_schema: true
+    require_faq_schema: true
+    require_breadcrumb: false
+
+# ================================================
+# Stage ⑤: 去 AI 化與優化
+# ================================================
+refinement:
+  # 去 AI 化策略
+  de_ai:
+    enabled: true
+    remove_patterns:
+      - "深入探索"
+      - "全面性的"
+      - "綜合性分析"
+      - "值得注意的是"
+      - "總而言之"
+      - "首先讓我們"
+    add_variance:
+      sentence_length: true
+      paragraph_structure: true
+    target_ai_score: 0.35          # 目標 AI 檢測分數 (越低越好)
+
+  # E-E-A-T 增強
+  eeat:
+    add_author_bio: false          # 是否加入作者簡介
+    add_publish_date: true
+    add_update_date: true
+    add_citations: true
+    citation_style: "inline"       # inline | footnote
+
+  # 繁體中文優化
+  zh_tw:
+    use_taiwan_terms: true         # 使用台灣用詞
+    date_format: "YYYY年M月D日"
+    number_format: "zh-TW"
+    avoid_simplified: true         # 避免簡體中文
+
+# ================================================
+# LLM 模型配置
+# ================================================
+llm_models:
+  small: gpt-4o-mini               # 快速任務 (summarization, keyword extraction)
+  main: gpt-4o                     # 主要任務 (gap analysis, outline, draft)
+  fallback: gpt-4o-mini            # API 失敗時的備用模型
+
+# ================================================
+# API & 效能設定
+# ================================================
+api:
+  max_retries: 3
+  timeout: 30                      # 秒
+  rate_limit:
+    requests_per_minute: 20
+    requests_per_day: 1000
+
+performance:
+  enable_cache: true
+  cache_ttl: 900                   # 15 分鐘 (秒)
+  parallel_requests: 3             # 並行請求數
+  batch_size: 5
+
+# ================================================
+# 輸出設定
+# ================================================
+output:
+  data_dir: "data"
+  format: "json"                   # json | yaml
+  pretty_print: true
+  include_metadata: true
+
+  # 檔案命名
+  files:
+    query_pool: "query_pool.csv"
+    query_vectors: "query_vectors.json"
+    merged_queries: "query_pool_merged.csv"
+    merged_vectors: "query_vectors_merged.json"
+    serp_analysis: "serp_analysis.json"
+    final_article: "article_{topic}_{timestamp}.md"
+
+# ================================================
+# 開發與除錯
+# ================================================
+dev:
+  debug_mode: false
+  log_level: "INFO"                # DEBUG | INFO | WARNING | ERROR
+  save_intermediate: true          # 保存中間結果
+  verbose: true
+
+# ================================================
+# 實驗性功能
+# ================================================
+experimental:
+  use_rephrasy: true               # Rephrasy API 去 AI 化
+  use_multimodal: false            # 圖片生成
+  use_voice_search_optimization: false

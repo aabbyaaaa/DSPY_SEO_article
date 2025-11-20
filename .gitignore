@@ -1,0 +1,22 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv*/
+venv*/
+
+# Tooling
+.claude/
+.mypy_cache/
+.pytest_cache/
+
+# Data and notebooks
+*.xlsx
+
+# Environment files
+.env
+*.env
+
+# Windows reserved name placeholder
+nul
