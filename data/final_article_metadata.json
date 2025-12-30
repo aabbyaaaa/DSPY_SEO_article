@@ -1,0 +1,89 @@
+{
+  "topic_zh": "高壓滅菌鍋",
+  "topic_en": "Autoclave",
+  "structure": "6-block",
+  "word_count": {
+    "quick_summary": 73,
+    "definition": 199,
+    "uses": 253,
+    "buying_guide": 273,
+    "maintenance": 337,
+    "faq": 1177,
+    "total": 2312
+  },
+  "blocks": {
+    "h2_count": 6,
+    "faq_questions": 9
+  },
+  "sources": {
+    "queries_analyzed": 46,
+    "pages_extracted": 114,
+    "pages_zh": 49,
+    "pages_en": 65,
+    "serp_results": 46,
+    "faq_selection": {
+      "paa_candidates": 127,
+      "extracted_candidates": 158,
+      "total_candidates": 285,
+      "selected_questions": 9
+    },
+    "content_gaps": 172
+  },
+  "references": [
+    {
+      "title": "GENERAL AUTOCLAVE SAFETY GUIDELINES",
+      "url": "https://www.ehs.washington.edu/system/files/resources/autoclave-safety.pdf",
+      "query": "Why is it important to follow safety precautions when using an autoclave?"
+    },
+    {
+      "title": "公共儀器操作說明手冊",
+      "url": "https://foodsci.nchu.edu.tw/AllDataPos/DownLoadPos/Root10/%E5%85%AC%E5%85%B1%E5%84%80%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AA%AA%E6%98%8E%E5%86%8A(%E7%B3%BB%E7%B6%B2%E5%85%AC%E5%91%8A)_5450.pdf",
+      "query": "高壓滅菌鍋常見故障及其排除方法"
+    },
+    {
+      "title": "高壓滅菌釜管理注意事項及操作流程",
+      "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/3921/228869792.pdf",
+      "query": "高壓滅菌鍋常見故障及其排除方法"
+    },
+    {
+      "title": "感染性廢棄物(含廢液)處理作業規定 - 中研院物理所",
+      "url": "https://www.phys.sinica.edu.tw/~eslab/files/form_download/6%E4%B8%AD%E7%A0%94%E9%99%A2%E6%84%9F%E6%9F%93%E6%80%A7%E5%BB%A2%E6%A3%84%E7%89%A9%E8%99%95%E7%90%86%E4%BD%9C%E6%A5%AD%E7%A8%8B%E5%BA%8F.pdf",
+      "query": "高壓滅菌鍋的儲存條件是什麼"
+    },
+    {
+      "title": "高壓滅菌釜管理注意事項及操作流程",
+      "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/3921/228869792.pdf",
+      "query": "使用高壓滅菌鍋時需要注意哪些安全事項"
+    },
+    {
+      "title": "高溫高壓滅菌鍋(TOMIN)使用規範",
+      "url": "https://immunology.mc.ntu.edu.tw/editorimg/files/%E9%AB%98%E6%BA%AB%E9%AB%98%E5%A3%93%E6%BB%85%E8%8F%8C%E9%8D%8B%E4%BD%BF%E7%94%A8%E8%A6%8F%E7%AF%84.pdf",
+      "query": "高壓滅菌鍋的操作步驟有哪些注意事項"
+    },
+    {
+      "title": "What to consider when purchasing a laboratory autoclave?",
+      "url": "https://tuttnauer.com/blog/what-consider-when-purchasing-laboratory-autoclave",
+      "query": "What factors should be considered when selecting an autoclave for a laboratory?"
+    },
+    {
+      "title": "高壓滅菌釜管理注意事項及操作流程",
+      "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/3921/228869792.pdf",
+      "query": "高壓滅菌釜"
+    },
+    {
+      "title": "最終滅菌作業指導手冊",
+      "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f636694191969037101",
+      "query": "高壓滅菌鍋能否用於食品的滅菌處理"
+    },
+    {
+      "title": "高壓滅菌釜管理注意事項及操作流程",
+      "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/3921/228869792.pdf",
+      "query": "高壓滅菌鍋的清潔與維護注意事項"
+    }
+  ],
+  "seo_requirements": {
+    "word_count_range": "1540-3600",
+    "word_count_achieved": 2312,
+    "within_range": true
+  }
+}

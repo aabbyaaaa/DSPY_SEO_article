@@ -93,10 +93,22 @@ class Config:
     def topic(self) -> str:
         return self._config.get("topic", "")
 
+    @property
+    def topic_en(self) -> str:
+        return self._config.get("topic_en", "")
+
     # === Stage ① & ② ===
     @property
     def query_pool_size(self) -> int:
-        return self._config.get("query_generation", {}).get("pool_size", 20)
+        return self._config.get("query_generation", {}).get("pool_size", 40)
+
+    @property
+    def zh_tw_queries(self) -> int:
+        return self._config.get("query_generation", {}).get("zh_tw_queries", 20)
+
+    @property
+    def en_queries(self) -> int:
+        return self._config.get("query_generation", {}).get("en_queries", 20)
 
     @property
     def merge_threshold(self) -> float:
@@ -104,7 +116,17 @@ class Config:
 
     @property
     def base_seeds(self) -> list:
-        return self._config.get("query_generation", {}).get("base_seeds", [])
+        """向後兼容：返回中文種子"""
+        return self._config.get("query_generation", {}).get("base_seeds_zh",
+                self._config.get("query_generation", {}).get("base_seeds", []))
+
+    @property
+    def base_seeds_zh(self) -> list:
+        return self._config.get("query_generation", {}).get("base_seeds_zh", [])
+
+    @property
+    def base_seeds_en(self) -> list:
+        return self._config.get("query_generation", {}).get("base_seeds_en", [])
 
     # === SERP 分析 ===
     @property

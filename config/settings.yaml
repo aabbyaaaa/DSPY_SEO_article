@@ -10,20 +10,26 @@
 lang: zh-TW
 region: tw
 topic: 高壓滅菌鍋
+topic_en: Autoclave   # 英文主題
 
 # ================================================
 # Stage ① & ②: 查詢池與研究
 # ================================================
 query_generation:
-  pool_size: 20                    # 生成查詢數量
+  pool_size: 40                    # 總查詢數量 (中文 + 英文)
+  zh_tw_queries: 20                # 繁體中文查詢數量
+  en_queries: 20                   # 英文查詢數量
   merge_threshold: 0.90            # 語義合併閾值 (cosine similarity)
-  language: "zh-TW"                # 只生成繁體中文查詢
-  base_seeds:                      # 手動種子查詢（防語義漂移）
+
+  # 繁體中文種子查詢（防語義漂移）
+  base_seeds_zh:
     - "高壓滅菌鍋"
-    - "高壓蒸氣滅菌器"
-    - "滅菌鍋使用方法"
-    - "高壓滅菌鍋 溫度"
-    - "滅菌鍋 維護保養"
+    - "高壓滅菌釜"
+    - "高壓消毒鍋"
+  # 英文種子查詢
+  base_seeds_en:
+    - "Autoclave"
+    - "Sterilizer"
 
 research:
   use_tavily: true
@@ -51,35 +57,84 @@ serp:
   # 內容分析深度
   content_analysis:
     fetch_full_text: true          # 抓取完整頁面內容
-    max_words_per_page: 5000       # 每頁最多分析字數
+    max_words_per_page: 15000       # 每頁最多分析字數
     extract_headings: true         # H1-H3
     extract_images: true
     extract_links: true
     analyze_eeat: true             # E-E-A-T 信號分析
 
-  # AI 引擎優化 (SEO/AISEO/GEO/AIO)
+  # AI 引擎優化 (AIO/AEO/GEO)
   ai_engines:
-    check_aiseo: true              # AI Overview (Google)
-    check_geo: true                # Gemini
-    check_aio: true                # Perplexity, You.com
-    ai_trigger_threshold: 0.6      # AI 觸發率閾值
+    # AIO (AI Overview) - Google 專屬
+    # Google SERP 頂部的 AI 生成摘要
+    check_aio: true
+
+    # AISEO = AEO (Answer Engine Optimization) - 答案引擎優化
+    # 涵蓋: Perplexity.ai, Bing Copilot, You.com
+    check_aiseo: true
+
+    # GEO (Generative Engine Optimization) - 生成式引擎優化
+    # 涵蓋: ChatGPT, Claude, Gemini (當被用作知識引用來源時)
+    check_geo: true
+
+    # AI 觸發率閾值 (≥ 此值時啟動積極優化策略)
+    ai_trigger_threshold: 0.6
 
 # ================================================
-# Stage ③: 語義評分
+# Stage ②: 語義評分 (v2.0 - 新架構)
 # ================================================
-scores:
-  # 混合評分權重
-  embedding_weight: 0.6            # Embedding 分數權重
-  llm_weight: 0.4                  # LLM 分數權重
+semantic_scoring:
+  # 三維評分權重 (總和 = 1.0)
+  weights:
+    ai_coverage: 0.45              # AI 引擎內容覆蓋度 (Tavily)
+    relevance: 0.25                # 主題相關性 (Embedding)
+    serp_signal: 0.30              # SERP 信號 (PAA + AI Overview + Ads)
 
-  # 三維評分權重
-  coverage_w: 0.4                  # 覆蓋度
-  relevance_w: 0.4                 # 相關性
-  density_w: 0.2                   # 密度
+  # 品質分級閾值
+  thresholds:
+    high_tier: 7.0                 # ≥7.0 = high (高品質)
+    medium_tier: 5.0               # 5.0-6.9 = medium (中品質)
+                                   # <5.0 = low (低品質)
 
-  # 評分閾值
-  min_score_threshold: 4.5         # 低於此分數的查詢會被過濾
-  top_queries_limit: 15            # 保留前 N 個高分查詢
+  # 負面關鍵字過濾 (降低相關性分數)
+  negative_keywords:
+    # 交易型 (過於商業化) - 注意：「購買」已移除，因為選購指南區塊需要
+    - "價格"
+    - "多少錢"
+    - "哪裡買"
+    - "優惠"
+    - "折扣"
+    - "促銷"
+    - "比價"
+
+    # 品牌競爭 (與主題無關)
+    - "品牌"
+    - "廠商"
+    - "公司"
+    - "代理"
+
+    # 過於泛化
+    - "是什麼"
+    - "有哪些"
+    - "介紹"
+
+  # AI Coverage 配置
+  ai_coverage:
+    tavily_max_results: 10         # Tavily 搜尋最大結果數
+    sources_required: 3            # 至少需要 3 個來源才算有效
+
+  # Relevance 配置
+  relevance:
+    use_embedding: true            # 使用 OpenAI Embeddings
+    embedding_model: "text-embedding-3-large"
+    negative_keyword_penalty: 0.5  # 負面關鍵字懲罰係數 (0.5 = 減半)
+
+  # SERP Signal 配置
+  serp_signal:
+    check_paa: true                # 檢查 People Also Ask
+    check_ai_overview: true        # 檢查 Google AI Overview
+    paa_weight: 0.5                # PAA 權重
+    ai_overview_weight: 0.5        # AI Overview 權重
 
 # ================================================
 # Stage ③: DSPy 分析模組
@@ -109,45 +164,85 @@ dspy:
       max_gaps: 5                  # 最多保留幾個缺口
 
     outline_generator:
-      structure: "4-block"         # 固定 4 區塊
+      structure: "6-block"         # 固定 6 區塊 (quick_summary, definition, uses, buying_guide, maintenance, faq)
       use_serp_insights: true
 
 # ================================================
-# Stage ④: 文章生成
+# Stage ④: 文章生成（6 區塊結構）
 # ================================================
 article:
-  structure: "4-block"
+  structure: "6-block"             # Quick Summary, Definition, Uses, Buying Guide, Maintenance, FAQ
 
-  # 4 區塊字數要求
+  # 6 區塊字數要求與規範
   blocks:
+    # 1️⃣ Quick Summary（快速摘要）
     quick_summary:
       word_count_min: 40
       word_count_max: 50
       sentences: 2-3               # 2-3 句話
-      must_include: ["定義"]
+      format: "plain_text"         # 純文字段落
+      must_include: ["定義", "優勢", "應用"]
+      avoid: ["條列式（1.2.3.或-）", "分段", "表格", "具體法規標準（如 ISO、FDA、CE、GMP）", "過度詳細的技術規格（留給 Definition）"]
+      purpose: "提供產品核心資訊，適合 AI Overview 快速抓取"
 
+    # 2️⃣ Definition（產品定義）
     definition:
       word_count_min: 100
       word_count_max: 150
-      must_include: ["基本定義"]
+      format: "plain_text"         # 純文字段落
+      must_include: ["產品介紹", "材質/規格"]
+      avoid: ["過度技術細節", "重複 Quick Summary 內容", "應用場景細節（留給 Uses）", "選購建議（留給 Buying Guide）", "條列式（1.2.3.或-）", "分段", "表格", "具體法規標準（如 ISO 17665、FDA 21 CFR、CE Mark、GMP）"]
+      purpose: "建立專業權威性，提供完整產品定義"
 
+    # 3️⃣ Uses（應用場景）
     uses:
       word_count_min: 100
       word_count_max: 150
-      format: "bullet_list"        # 條列式
-      subsections_min: 3
+      format: "paragraph"          # 段落式（冒號分隔）
+      scenarios_min: 3
+      scenarios_max: 5
+      per_scenario_words: 30-50
+      structure: "場景名稱：適用情境描述（不包含操作步驟）"
+      must_include: ["應用場景", "適用對象", "使用情境"]
+      avoid: ["操作步驟", "使用方法", "注意事項", "籠統描述（如『XX實驗室』）", "條列式（1.2.3.或-）", "分段", "表格", "具體法規標準（如 ISO、FDA、CE、GMP）", "重複 Quick Summary、Definition 已說過的內容"]
+      purpose: "描述實際應用場景與適用情境（僅場景，不含操作步驟）"
 
+    # 4️⃣ Buying Guide（選購指南）
+    buying_guide:
+      quick_summary_words: 50-80   # 快速重點（AIO 優化）
+      detailed_words: 250          # 詳細內容
+      format: "▸ 快速重點：[簡答]｜ [詳細內容]"
+      must_include: ["選購要素", "規格選擇", "常見錯誤"]
+      avoid: ["具體法規標準（如 ISO、FDA、CE）", "品牌推薦", "保養維護內容（留給 Maintenance）", "重複 Definition、Uses 已說過的規格", "條列式", "表格", "分段"]
+      no_line_break: true          # 不能換行
+      purpose: "提供選購建議，幫助使用者選擇合適產品"
+
+    # 5️⃣ Maintenance（保養維護）
+    maintenance:
+      quick_summary_words: 50-80   # 快速重點（AIO 優化）
+      detailed_words: 250          # 詳細內容
+      format: "▸ 快速重點：[簡答]｜ [詳細內容]"
+      must_include: ["日常清潔", "儲存條件", "定期檢查", "故障排除"]
+      avoid: ["具體法規標準（如 ISO、FDA、CE、GMP）", "選購建議（留給 Buying Guide）", "重複 Definition 已說過的規格", "條列式", "表格", "分段"]
+      no_line_break: true          # 不能換行
+      purpose: "延長產品壽命並確保操作安全"
+
+    # 6️⃣ FAQ（常見問題）
     faq:
-      word_count_min: 3000
+      word_count_min: 1200
       word_count_max: 3000
       questions_min: 10
       questions_max: 10
       answer_max_words: 300        # 每個回答不超過 300 字
-      require_schema: true         # 必須包含 FAQPage schema
+      format: "Q: [問題] + A: [回答]"
+      content_types: ["操作方法", "故障排除", "規格選擇", "安全注意事項"]
+      avoid: ["具體法規標準（如 ISO、FDA、CE、GMP）", "條列式回答", "表格", "重複 Quick Summary、Definition、Uses、Buying Guide、Maintenance 區塊已說過的內容", "不同 FAQ 問題之間的答案重複"]
+      require_schema: false        # Schema.org FAQ 標記（選配）
+      purpose: "回答使用者常見疑問，優化 Featured Snippet 與 PAA"
 
-  # 總字數
-  total_word_count_min: 3200
-  total_word_count_max: 3500
+  # 總字數（更新為 6 區塊）
+  total_word_count_min: 1540       # 40+100+100+300+300+700 (最小)
+  total_word_count_max: 3600       # 50+150+150+330+330+2590 (最大)
 
   # SEO 要求
   seo:

@@ -1,0 +1,1268 @@
+{
+  "total_paa_questions": 127,
+  "frequency_distribution": {
+    "max": 9,
+    "median": 1,
+    "high_threshold": 3,
+    "medium_threshold": 2,
+    "high_freq_count": 8,
+    "medium_freq_count": 11,
+    "low_freq_count": 108
+  },
+  "language_distribution": {
+    "zh_TW": 39,
+    "en": 88,
+    "zh_TW_percentage": 30.708661417322837,
+    "en_percentage": 69.29133858267717
+  },
+  "type_distribution": {
+    "How": 39,
+    "Troubleshooting": 6,
+    "Specification": 69,
+    "Safety": 10,
+    "Comparison": 3,
+    "Other": 0
+  },
+  "similarity_analysis": {
+    "threshold": 0.7,
+    "would_be_filtered": 22,
+    "would_pass": 105
+  },
+  "top_10_predicted": [
+    {
+      "question": "相關滅菌儀器需要至少多久進行一次滅菌效能測試？",
+      "frequency": 9,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.5375463964514205
+    },
+    {
+      "question": "60度能殺菌嗎？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.6327140168801862
+    },
+    {
+      "question": "高壓滅菌的溫度和時間需求是什麼？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.6783031721123294
+    },
+    {
+      "question": "高壓蒸氣滅菌保存期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5922465966746642
+    },
+    {
+      "question": "高壓滅菌有效期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6015063682269924
+    },
+    {
+      "question": "What are the technical specifications of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5375923171871001
+    },
+    {
+      "question": "What is the standard for autoclaving?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5750586235142434
+    },
+    {
+      "question": "What are the factors of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5457124869187266
+    },
+    {
+      "question": "How to choose an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6748507894560584
+    },
+    {
+      "question": "What are the four main parameters necessary for effective uses of an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5323921972443716
+    }
+  ],
+  "all_paa_questions": [
+    {
+      "question": "相關滅菌儀器需要至少多久進行一次滅菌效能測試？",
+      "frequency": 9,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.5375463964514205
+    },
+    {
+      "question": "高溫高壓滅菌釜的運作原理,為何它可以達到滅菌效果？",
+      "frequency": 6,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.8128059670955247
+    },
+    {
+      "question": "高壓蒸氣滅菌注意事項？",
+      "frequency": 6,
+      "lang": "zh-TW",
+      "type": "Safety",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.7011856361022646
+    },
+    {
+      "question": "桌上型高壓滅菌鍋操作？",
+      "frequency": 4,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.8326053228673824
+    },
+    {
+      "question": "高壓蒸氣滅菌法的條件是？",
+      "frequency": 4,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.7279897966477974
+    },
+    {
+      "question": "60度能殺菌嗎？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.6327140168801862
+    },
+    {
+      "question": "高壓滅菌鍋怎麼用？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.8560325073341344
+    },
+    {
+      "question": "高壓滅菌的溫度和時間需求是什麼？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.6783031721123294
+    },
+    {
+      "question": "高壓滅菌釜 壓力？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.7714180945427721
+    },
+    {
+      "question": "高壓消毒鍋壓力？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.7494453800009909
+    },
+    {
+      "question": "高壓滅菌釜條件？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.7755268218267631
+    },
+    {
+      "question": "高壓滅菌鍋使用？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.8378131431601538
+    },
+    {
+      "question": "高壓蒸氣滅菌保存期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5922465966746642
+    },
+    {
+      "question": "高壓滅菌有效期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6015063682269924
+    },
+    {
+      "question": "What are the technical specifications of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5375923171871001
+    },
+    {
+      "question": "What is the standard for autoclaving?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5750586235142434
+    },
+    {
+      "question": "What are the factors of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5457124869187266
+    },
+    {
+      "question": "How to choose an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6748507894560584
+    },
+    {
+      "question": "What are the four main parameters necessary for effective uses of an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5323921972443716
+    },
+    {
+      "question": "高壓滅菌鍋使用方法？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8507422749873733
+    },
+    {
+      "question": "高溫高壓滅菌鍋溫度？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8242619536651303
+    },
+    {
+      "question": "高壓釜是什麼？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6168760937214622
+    },
+    {
+      "question": "高壓滅菌釜操作？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8240819204788191
+    },
+    {
+      "question": "高壓消毒鍋溫度？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.7494338818739926
+    },
+    {
+      "question": "高壓消毒鍋原理？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8149551815646566
+    },
+    {
+      "question": "消毒鍋第一次使用要洗嗎？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.63708194031005
+    },
+    {
+      "question": "高溫高壓滅菌鍋原理？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8645572179584352
+    },
+    {
+      "question": "高壓蒸氣滅菌法保存期限？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5747099587829876
+    },
+    {
+      "question": "高溫高壓滅菌鍋操作？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8173319630673737
+    },
+    {
+      "question": "高壓滅菌鍋溫度？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.7926927363606905
+    },
+    {
+      "question": "90度可以殺菌嗎？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6417875643707773
+    },
+    {
+      "question": "滅菌袋尺寸？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5685797557010361
+    },
+    {
+      "question": "滅菌釜規格？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.7517093198748414
+    },
+    {
+      "question": "醫療器材滅菌方式？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5900011443521823
+    },
+    {
+      "question": "一般醫療器械用消毒劑 可以 噴 手 嗎？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4747154239754149
+    },
+    {
+      "question": "uv殺菌需要多久 實驗室？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5305810802685745
+    },
+    {
+      "question": "高溫高壓滅菌條件？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.7435100227962618
+    },
+    {
+      "question": "遊校是什麼？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.19410002303286175
+    },
+    {
+      "question": "滅菌袋可以重複使用嗎？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5116319246293433
+    },
+    {
+      "question": "autoclave達到滅菌狀態的條件？",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6623040366925653
+    },
+    {
+      "question": "高壓滅菌鍋規範？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8263992100405038
+    },
+    {
+      "question": "高溫高壓滅菌釜原理？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.8121784661263588
+    },
+    {
+      "question": "濕熱滅菌步驟？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6922099579067037
+    },
+    {
+      "question": "高壓滅菌釜注意事項？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.7675048361688029
+    },
+    {
+      "question": "100度殺菌幾秒？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5866684205856798
+    },
+    {
+      "question": "What exactly does an autoclave do?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.491953814842618
+    },
+    {
+      "question": "Which bacteria is not killed by autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.3718768921518592
+    },
+    {
+      "question": "Do autoclaves sterilize or disinfect?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4806258097520857
+    },
+    {
+      "question": "What are the five uses of autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4870582448236963
+    },
+    {
+      "question": "What is a sterilizer?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47306583139878655
+    },
+    {
+      "question": "What is a steriliser used for?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.48716385478705526
+    },
+    {
+      "question": "Do pediatricians recommend sterilizing bottles?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.3587048652119552
+    },
+    {
+      "question": "Can you sterilize with just boiling water?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4311635827513867
+    },
+    {
+      "question": "What material is used in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.48479118943044336
+    },
+    {
+      "question": "What type of material should be allowed in autoclave bags?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4521928240945485
+    },
+    {
+      "question": "What plastic materials are used in autoclaving?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4317546305474102
+    },
+    {
+      "question": "What are the components of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5069478019896255
+    },
+    {
+      "question": "What is the capacity of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5040682557151979
+    },
+    {
+      "question": "What is the ISO standard for autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4942684294247493
+    },
+    {
+      "question": "What is the maximum volume to which an autoclave should be filled?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4438993384611132
+    },
+    {
+      "question": "What is the range of autoclaving?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47891062626951664
+    },
+    {
+      "question": "What are the sizes of autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5162656103911601
+    },
+    {
+      "question": "What size autoclave do I need?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5623417917890908
+    },
+    {
+      "question": "What is the pressure in the autoclave during sterilization?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5689998143248322
+    },
+    {
+      "question": "Why is 15 psi used in autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5915355922441834
+    },
+    {
+      "question": "What is the pressure at 134 in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5091739365962472
+    },
+    {
+      "question": "What psi is needed for sterilization?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5896945068357692
+    },
+    {
+      "question": "What is the recommended temperature for effective sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5473329043858853
+    },
+    {
+      "question": "What is the temperature setting for sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5506762387259755
+    },
+    {
+      "question": "Why autoclave at 121 C?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5705543414268641
+    },
+    {
+      "question": "What settings and time are normally used for sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.49093957010012695
+    },
+    {
+      "question": "How does an autoclave sterilize instruments?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5197218681294229
+    },
+    {
+      "question": "Why are surgical instruments autoclaved?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.43064969258763064
+    },
+    {
+      "question": "Which autoclave is used for surgical procedures?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5085855667686474
+    },
+    {
+      "question": "How do they sterilize surgical instruments?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4594963754000243
+    },
+    {
+      "question": "Can glassware be sterilized in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4352220684039497
+    },
+    {
+      "question": "What cannot be sterilized in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.40270148403046446
+    },
+    {
+      "question": "What glassware can be autoclaved?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4461761287692867
+    },
+    {
+      "question": "Can I autoclave glass vials?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4453545124131049
+    },
+    {
+      "question": "What is the use of autoclave in food industry?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.553277873491866
+    },
+    {
+      "question": "What is the main purpose of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5317842091440266
+    },
+    {
+      "question": "Why is sterilization important in the food industry?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4859348489887768
+    },
+    {
+      "question": "What is the purpose of an autoclave Quizlet?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5014367922112564
+    },
+    {
+      "question": "How to sterilize dental instruments in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4860031193673295
+    },
+    {
+      "question": "What is an autoclave used for in dentistry?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4476835758044455
+    },
+    {
+      "question": "How does an autoclave work to sterilize instruments?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5337129718591187
+    },
+    {
+      "question": "When using an autoclave to sterilize instruments, you should?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5467732126620967
+    },
+    {
+      "question": "When selecting laboratory equipment, important factors to consider are?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5657238543641647
+    },
+    {
+      "question": "How to choose the right autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6459117142792875
+    },
+    {
+      "question": "Which is better Class N or B autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4824595847617598
+    },
+    {
+      "question": "What is the difference between 121 and 134 autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4774618089506584
+    },
+    {
+      "question": "Which factors contribute to successful sterilization using an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5331946088844047
+    },
+    {
+      "question": "How should an autoclave be cleaned?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4708549088103579
+    },
+    {
+      "question": "How often should the autoclave be cleaned and maintained?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4541171631407401
+    },
+    {
+      "question": "How to perform weekly maintenance on autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47880674871487466
+    },
+    {
+      "question": "How to maintain an type autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5381793444216514
+    },
+    {
+      "question": "What is the process of calibrating?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.40962994387027446
+    },
+    {
+      "question": "What are the 5 points of calibration?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.3561567017300177
+    },
+    {
+      "question": "How often should an autoclave be calibrated?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.44607476059703366
+    },
+    {
+      "question": "What is done during the 3 steps of the validation process for steam autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4899059666291895
+    },
+    {
+      "question": "What should you do if the autoclave does not reach the required temperature?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4657919556401724
+    },
+    {
+      "question": "What to do if an autoclave fails?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5084080347332097
+    },
+    {
+      "question": "How to troubleshoot an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4996835022663921
+    },
+    {
+      "question": "What actions you would take if the autoclave validation test was unsuccessful?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4153919635182538
+    },
+    {
+      "question": "What are the standard conditions for an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.578331799941594
+    },
+    {
+      "question": "What are the CDC guidelines for sterile supply storage?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4075966319281516
+    },
+    {
+      "question": "How should an autoclave pack be stored?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5055429718135744
+    },
+    {
+      "question": "What are the requirements for sterile storage?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.41961987679070223
+    },
+    {
+      "question": "Why is it important to be careful when using an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5671391501900266
+    },
+    {
+      "question": "What are the safety precautions when handling an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6185278962045281
+    },
+    {
+      "question": "What are the safety risks of autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6096176894962549
+    },
+    {
+      "question": "When using the autoclave, it is important to?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5797710518443819
+    },
+    {
+      "question": "What is the lifespan of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4870459092134264
+    },
+    {
+      "question": "How to maintain an autoclave machine?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5343768013842656
+    },
+    {
+      "question": "How often does an autoclave need to be serviced?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4739733715398219
+    },
+    {
+      "question": "Can an autoclave be repaired?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.45931748898590374
+    },
+    {
+      "question": "What are the steps to use an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6087113405276346
+    },
+    {
+      "question": "What is the standard autoclave procedure?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5913999448438827
+    },
+    {
+      "question": "What are the 5 basic processes of the sterilization cycle?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4875798386226546
+    },
+    {
+      "question": "What is the test for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.45168049308902813
+    },
+    {
+      "question": "What are the indicators for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.46039430609387033
+    },
+    {
+      "question": "What is the ISO guideline for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5206823356550684
+    },
+    {
+      "question": "What are the acceptance criteria for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4677658619055512
+    },
+    {
+      "question": "How to quality control an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5683651819583135
+    },
+    {
+      "question": "What is quality control in sterilization?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4308643387411614
+    },
+    {
+      "question": "Which of the following can be used as quality control in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.519010104359456
+    },
+    {
+      "question": "What quality control measures can be done to validate the effectiveness of a sterilization method?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4437905431629723
+    }
+  ]
+}

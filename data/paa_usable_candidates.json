@@ -1,0 +1,722 @@
+{
+  "summary": {
+    "total_paa": 127,
+    "total_usable": 79,
+    "high_freq_usable": 1,
+    "medium_freq_usable": 7,
+    "low_freq_usable": 71
+  },
+  "usable_questions": [
+    {
+      "question": "高壓滅菌的溫度和時間需求是什麼？",
+      "frequency": 3,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "high",
+      "base_score": 15.0,
+      "max_similarity": 0.6783031721123294
+    },
+    {
+      "question": "高壓蒸氣滅菌保存期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5922465966746642
+    },
+    {
+      "question": "高壓滅菌有效期限？",
+      "frequency": 2,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6015063682269924
+    },
+    {
+      "question": "What are the technical specifications of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5375923171871001
+    },
+    {
+      "question": "What is the standard for autoclaving?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5750586235142434
+    },
+    {
+      "question": "What are the factors of autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5457124869187266
+    },
+    {
+      "question": "How to choose an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.6748507894560584
+    },
+    {
+      "question": "What are the four main parameters necessary for effective uses of an autoclave?",
+      "frequency": 2,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "medium",
+      "base_score": 12.0,
+      "max_similarity": 0.5323921972443716
+    },
+    {
+      "question": "消毒鍋第一次使用要洗嗎？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.63708194031005
+    },
+    {
+      "question": "高壓蒸氣滅菌法保存期限？",
+      "frequency": 1,
+      "lang": "zh-TW",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5747099587829876
+    },
+    {
+      "question": "autoclave達到滅菌狀態的條件？",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6623040366925653
+    },
+    {
+      "question": "What exactly does an autoclave do?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.491953814842618
+    },
+    {
+      "question": "Which bacteria is not killed by autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.3718768921518592
+    },
+    {
+      "question": "Do autoclaves sterilize or disinfect?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4806258097520857
+    },
+    {
+      "question": "What are the five uses of autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4870582448236963
+    },
+    {
+      "question": "What is a sterilizer?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47306583139878655
+    },
+    {
+      "question": "What material is used in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.48479118943044336
+    },
+    {
+      "question": "What type of material should be allowed in autoclave bags?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4521928240945485
+    },
+    {
+      "question": "What plastic materials are used in autoclaving?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4317546305474102
+    },
+    {
+      "question": "What are the components of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5069478019896255
+    },
+    {
+      "question": "What is the capacity of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5040682557151979
+    },
+    {
+      "question": "What is the ISO standard for autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4942684294247493
+    },
+    {
+      "question": "What is the maximum volume to which an autoclave should be filled?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4438993384611132
+    },
+    {
+      "question": "What is the range of autoclaving?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47891062626951664
+    },
+    {
+      "question": "What are the sizes of autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5162656103911601
+    },
+    {
+      "question": "What size autoclave do I need?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5623417917890908
+    },
+    {
+      "question": "What is the pressure in the autoclave during sterilization?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5689998143248322
+    },
+    {
+      "question": "Why is 15 psi used in autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5915355922441834
+    },
+    {
+      "question": "What is the pressure at 134 in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5091739365962472
+    },
+    {
+      "question": "What is the recommended temperature for effective sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5473329043858853
+    },
+    {
+      "question": "What is the temperature setting for sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5506762387259755
+    },
+    {
+      "question": "Why autoclave at 121 C?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5705543414268641
+    },
+    {
+      "question": "What settings and time are normally used for sterilization in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.49093957010012695
+    },
+    {
+      "question": "How does an autoclave sterilize instruments?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5197218681294229
+    },
+    {
+      "question": "Why are surgical instruments autoclaved?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.43064969258763064
+    },
+    {
+      "question": "Which autoclave is used for surgical procedures?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5085855667686474
+    },
+    {
+      "question": "Can glassware be sterilized in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4352220684039497
+    },
+    {
+      "question": "What cannot be sterilized in an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.40270148403046446
+    },
+    {
+      "question": "What glassware can be autoclaved?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4461761287692867
+    },
+    {
+      "question": "Can I autoclave glass vials?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4453545124131049
+    },
+    {
+      "question": "What is the use of autoclave in food industry?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.553277873491866
+    },
+    {
+      "question": "What is the main purpose of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5317842091440266
+    },
+    {
+      "question": "What is the purpose of an autoclave Quizlet?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5014367922112564
+    },
+    {
+      "question": "How to sterilize dental instruments in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4860031193673295
+    },
+    {
+      "question": "What is an autoclave used for in dentistry?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4476835758044455
+    },
+    {
+      "question": "How does an autoclave work to sterilize instruments?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5337129718591187
+    },
+    {
+      "question": "When using an autoclave to sterilize instruments, you should?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5467732126620967
+    },
+    {
+      "question": "How to choose the right autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6459117142792875
+    },
+    {
+      "question": "Which is better Class N or B autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4824595847617598
+    },
+    {
+      "question": "What is the difference between 121 and 134 autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Comparison",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4774618089506584
+    },
+    {
+      "question": "Which factors contribute to successful sterilization using an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5331946088844047
+    },
+    {
+      "question": "How should an autoclave be cleaned?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4708549088103579
+    },
+    {
+      "question": "How often should the autoclave be cleaned and maintained?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4541171631407401
+    },
+    {
+      "question": "How to perform weekly maintenance on autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.47880674871487466
+    },
+    {
+      "question": "How to maintain an type autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5381793444216514
+    },
+    {
+      "question": "How often should an autoclave be calibrated?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.44607476059703366
+    },
+    {
+      "question": "What is done during the 3 steps of the validation process for steam autoclaves?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4899059666291895
+    },
+    {
+      "question": "What should you do if the autoclave does not reach the required temperature?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4657919556401724
+    },
+    {
+      "question": "What to do if an autoclave fails?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5084080347332097
+    },
+    {
+      "question": "How to troubleshoot an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4996835022663921
+    },
+    {
+      "question": "What actions you would take if the autoclave validation test was unsuccessful?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4153919635182538
+    },
+    {
+      "question": "What are the standard conditions for an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.578331799941594
+    },
+    {
+      "question": "How should an autoclave pack be stored?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5055429718135744
+    },
+    {
+      "question": "Why is it important to be careful when using an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5671391501900266
+    },
+    {
+      "question": "What are the safety precautions when handling an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6185278962045281
+    },
+    {
+      "question": "What are the safety risks of autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6096176894962549
+    },
+    {
+      "question": "When using the autoclave, it is important to?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Safety",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5797710518443819
+    },
+    {
+      "question": "What is the lifespan of an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4870459092134264
+    },
+    {
+      "question": "How to maintain an autoclave machine?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5343768013842656
+    },
+    {
+      "question": "How often does an autoclave need to be serviced?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4739733715398219
+    },
+    {
+      "question": "Can an autoclave be repaired?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Troubleshooting",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.45931748898590374
+    },
+    {
+      "question": "What are the steps to use an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.6087113405276346
+    },
+    {
+      "question": "What is the standard autoclave procedure?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5913999448438827
+    },
+    {
+      "question": "What is the test for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.45168049308902813
+    },
+    {
+      "question": "What are the indicators for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.46039430609387033
+    },
+    {
+      "question": "What is the ISO guideline for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5206823356550684
+    },
+    {
+      "question": "What are the acceptance criteria for autoclave validation?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.4677658619055512
+    },
+    {
+      "question": "How to quality control an autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "How",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.5683651819583135
+    },
+    {
+      "question": "Which of the following can be used as quality control in autoclave?",
+      "frequency": 1,
+      "lang": "en",
+      "type": "Specification",
+      "tier": "low",
+      "base_score": 8.0,
+      "max_similarity": 0.519010104359456
+    }
+  ]
+}

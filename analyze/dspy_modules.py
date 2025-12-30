@@ -107,10 +107,11 @@ class ContentSummarizer(dspy.Module):
 
 class ContentGap(BaseModel):
     """單個內容缺口機會"""
-    gap_type: str = Field(description="缺口類型：AISEO/PAA/Depth/Coverage")
+    gap_type: str = Field(description="缺口類型：AISEO/Coverage/Specificity/Practical/PAA/Depth")
     description: str = Field(description="缺口描述 (50-100字)")
     opportunity_score: float = Field(description="機會分數 0-1", ge=0, le=1)
     recommended_action: str = Field(description="建議行動")
+    target_block: str = Field(description="目標區塊：quick_summary/definition/uses/buying_guide/maintenance/faq", default="")
     related_paa: List[str] = Field(description="相關 PAA 問題", default_factory=list)
 
 
@@ -125,7 +126,28 @@ class GapAnalyzerSignature(dspy.Signature):
     avg_content_depth: str = dspy.InputField(desc="競爭者平均內容深度")
 
     # 輸出
-    gaps: List[Dict] = dspy.OutputField(desc="3-5 個內容缺口機會，每個包含：gap_type, description, opportunity_score, recommended_action")
+    gaps: List[Dict] = dspy.OutputField(desc="""
+    3-5 個內容缺口機會，每個包含：gap_type, description, opportunity_score, recommended_action, target_block
+
+    6 種 Gap 類型說明：
+    1. AISEO - AI Overview 優化機會（target_block: quick_summary）
+       - 競爭者的 Quick Summary 不夠簡潔或未優化為可被 AI 引用
+
+    2. Coverage - 產品定義完整性（target_block: definition）
+       - 競爭者的產品定義缺少材質、規格、應用標準等關鍵資訊
+
+    3. Specificity - 應用場景具體性（target_block: uses）
+       - 競爭者的使用場景描述太籠統（如「實驗室使用」），缺乏具體情境描述
+
+    4. Practical - 實用性資訊缺口（target_block: buying_guide 或 maintenance）
+       - 競爭者缺少選購指南或保養維護資訊
+
+    5. PAA - People Also Ask 覆蓋（target_block: faq）
+       - 競爭者未回答 PAA 中的常見問題
+
+    6. Depth - 整體內容深度（target_block: 任意）
+       - 競爭者內容過於淺層，缺乏深度分析
+    """)
     priority_ranking: List[str] = dspy.OutputField(desc="缺口優先順序排序（按 opportunity_score 降序）")
 
 
@@ -178,14 +200,47 @@ class GapAnalyzer(dspy.Module):
 
             # 解析輸出
             gaps = []
-            if isinstance(pred.gaps, list):
-                for gap_data in pred.gaps:
-                    if isinstance(gap_data, dict):
+
+            # 處理字串格式的輸出（DSPy 可能回傳帶編號的 JSON 列表）
+            if isinstance(pred.gaps, str):
+                import re
+                # 使用正則提取 JSON 物件
+                json_pattern = r'\{[^{}]*"gap_type"[^{}]*\}'
+                matches = re.findall(json_pattern, pred.gaps)
+
+                for match in matches:
+                    try:
+                        gap_data = json.loads(match)
+                        # 將 opportunity_score 標準化為 0-1 範圍（如果是 1-10）
+                        score = float(gap_data.get("opportunity_score", 0.5))
+                        if score > 1:
+                            score = score / 10.0
+
                         gaps.append(ContentGap(
                             gap_type=gap_data.get("gap_type", "Unknown"),
                             description=gap_data.get("description", ""),
-                            opportunity_score=float(gap_data.get("opportunity_score", 0.5)),
+                            opportunity_score=score,
                             recommended_action=gap_data.get("recommended_action", ""),
+                            target_block=gap_data.get("target_block", ""),
+                            related_paa=[q.get("question", "") for q in paa_questions[:3]]
+                        ))
+                    except json.JSONDecodeError:
+                        continue
+
+            # 處理列表格式的輸出
+            elif isinstance(pred.gaps, list):
+                for gap_data in pred.gaps:
+                    if isinstance(gap_data, dict):
+                        score = float(gap_data.get("opportunity_score", 0.5))
+                        if score > 1:
+                            score = score / 10.0
+
+                        gaps.append(ContentGap(
+                            gap_type=gap_data.get("gap_type", "Unknown"),
+                            description=gap_data.get("description", ""),
+                            opportunity_score=score,
+                            recommended_action=gap_data.get("recommended_action", ""),
+                            target_block=gap_data.get("target_block", ""),
                             related_paa=[q.get("question", "") for q in paa_questions[:3]]
                         ))
 
@@ -194,7 +249,9 @@ class GapAnalyzer(dspy.Module):
             return gaps[:5]  # 最多保留 5 個
 
         except Exception as e:
+            import traceback
             print(f"⚠️ 缺口分析失敗 @ {query}: {e}")
+            print(f"詳細錯誤: {traceback.format_exc()}")
             return []
 
 
@@ -204,25 +261,43 @@ class GapAnalyzer(dspy.Module):
 
 class ArticleBlock(BaseModel):
     """文章區塊結構"""
-    block_name: str = Field(description="區塊名稱：quick_summary/definition/uses/faq")
+    block_name: str = Field(description="區塊名稱：quick_summary/definition/uses/buying_guide/maintenance/faq")
     block_title: str = Field(description="區塊標題（繁體中文）")
-    word_count_target: str = Field(description="目標字數範圍，如 '100-150'")
+    word_count_target: str = Field(description="目標字數範圍，如 '100-150' 或 '50-80+250'（快速重點+詳細內容）")
     subsections: List[Dict] = Field(description="子章節列表，每個包含 title 和 key_points")
     paa_coverage: List[str] = Field(description="此區塊涵蓋的 PAA 問題", default_factory=list)
+    gap_addressed: List[str] = Field(description="此區塊解決的 Gap 類型", default_factory=list)
 
 
 class OutlineGeneratorSignature(dspy.Signature):
-    """生成符合 4-block 結構的文章大綱"""
+    """生成符合 6-block 結構的文章大綱"""
 
     # 輸入
     query: str = dspy.InputField(desc="搜尋查詢（主題）")
-    content_gaps: str = dspy.InputField(desc="內容缺口列表（JSON 格式）")
+    content_gaps: str = dspy.InputField(desc="內容缺口列表（JSON 格式），包含 target_block 指示每個缺口對應的區塊")
     paa_questions: str = dspy.InputField(desc="PAA 問題列表")
     aiseo_triggered: bool = dspy.InputField(desc="是否觸發 AI Overview（若為 True，Quick Summary 必須優化為可被引用）")
-    block_requirements: str = dspy.InputField(desc="4-block 字數要求（JSON 格式）")
+    block_requirements: str = dspy.InputField(desc="6-block 字數要求（JSON 格式）")
 
     # 輸出
-    outline: Dict = dspy.OutputField(desc="完整文章大綱，包含 4 個 block，每個 block 包含 subsections")
+    outline: Dict = dspy.OutputField(desc="""
+    完整文章大綱，包含 6 個 block：
+
+    1. quick_summary (40-50字) - 快速摘要，優化為 AI Overview 可引用格式
+    2. definition (100-150字) - 產品定義，包含材質/規格/應用標準
+    3. uses (100-150字) - 應用場景（僅描述場景，不包含操作步驟、使用方法、注意事項）
+    4. buying_guide (50-80字快速重點 + 250字詳細) - 選購指南，格式：▸ 快速重點：[簡答]｜ [詳細內容]
+    5. maintenance (50-80字快速重點 + 250字詳細) - 保養維護，格式：▸ 快速重點：[簡答]｜ [詳細內容]
+    6. faq (1200-3000字) - 常見問題，10個Q&A，優先覆蓋PAA問題
+
+    每個 block 需包含：
+    - block_name (區塊名稱)
+    - block_title (繁體中文標題)
+    - word_count_target (字數範圍)
+    - subsections (子章節，包含 title 和 key_points)
+    - paa_coverage (涵蓋的PAA問題)
+    - gap_addressed (解決的Gap類型)
+    """)
 
 
 class OutlineGenerator(dspy.Module):
@@ -280,33 +355,57 @@ class OutlineGenerator(dspy.Module):
             return self._default_outline(query)
 
     def _default_outline(self, query: str) -> Dict:
-        """預設大綱結構（當 DSPy 失敗時使用）"""
+        """預設大綱結構（當 DSPy 失敗時使用）- 6-block 結構"""
         return {
             "topic": query,
             "blocks": [
                 {
                     "block_name": "quick_summary",
-                    "block_title": f"{query}快速總覽",
-                    "word_count_target": "100-150",
-                    "subsections": []
+                    "block_title": f"{query}快速摘要",
+                    "word_count_target": "40-50",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["AISEO"]
                 },
                 {
                     "block_name": "definition",
                     "block_title": f"什麼是{query}？",
-                    "word_count_target": "300-400",
-                    "subsections": []
+                    "word_count_target": "100-150",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["Coverage"]
                 },
                 {
                     "block_name": "uses",
-                    "block_title": f"{query}的使用方法",
-                    "word_count_target": "500-600",
-                    "subsections": []
+                    "block_title": f"{query}的應用場景",
+                    "word_count_target": "100-150",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["Specificity"]
+                },
+                {
+                    "block_name": "buying_guide",
+                    "block_title": f"{query}選購指南",
+                    "word_count_target": "50-80+250",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["Practical"]
+                },
+                {
+                    "block_name": "maintenance",
+                    "block_title": f"{query}保養維護",
+                    "word_count_target": "50-80+250",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["Practical"]
                 },
                 {
                     "block_name": "faq",
                     "block_title": f"{query}常見問題",
-                    "word_count_target": "600-1000",
-                    "subsections": []
+                    "word_count_target": "1200-3000",
+                    "subsections": [],
+                    "paa_coverage": [],
+                    "gap_addressed": ["PAA", "Depth"]
                 }
             ]
         }
